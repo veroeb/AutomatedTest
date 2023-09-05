@@ -1,6 +1,6 @@
 # AutomatedTest
 
-Este proyecto contiene pruebas automatizadas para la plataforma MercadoLibre utilizando Selenium, Cucumber y Java. 
+Este proyecto contiene pruebas automatizadas para la plataforma MercadoLibre utilizando Selenium, Cucumber y Java. Fue testeado usando IntelliJ IDEA.
 
 ## Instalación de Dependencias 
 
