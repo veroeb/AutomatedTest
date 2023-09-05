@@ -29,5 +29,5 @@ Yendo al archivo ```pom.xml``` y haciendo click en el ícono que aparece de Mave
 
 2. Hacer click en cualquiera de los dos botones de "play" en el Feature (si hubieran más escenarios, darle play en Feature permitiría correr todos los escenarios seguidos sin interrupciones) o directamente en el escenario que quiero correr:
 
-   ![image-20230904100715902 PM](./README.assets/image-20230904100715902 PM.png)
+   <img src="./README.assets/image-20230904100715902 PM.png" alt="image-20230904100715902 PM"  />
 
