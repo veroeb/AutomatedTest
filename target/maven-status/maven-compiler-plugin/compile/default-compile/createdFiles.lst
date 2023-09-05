@@ -1,0 +1,7 @@
+steps/Steps.class
+pages/ProductPage.class
+factory/DriverFactory.class
+pages/HomePage.class
+pages/BasePage.class
+pages/LoginPage.class
+hooks/Hooks.class
