@@ -1,6 +1,6 @@
 Feature: MercadoLibre
 
-  Scenario: Verify the price is the same and there's at least one iPhone available
+  Scenario: Verify that the price is the same and there's at least one iPhone available
     Given I access MercadoLibre webpage
     When I click on the Uruguay flag
     Then I can see the Uruguayan website displayed

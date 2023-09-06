@@ -47,6 +47,7 @@ public class ProductPage extends BasePage{
          * Clicks on the Comprar Ahora button
          * return: new LoginPage
          */
+        scrollToElement(buyNow);
         getWait().until(ExpectedConditions.elementToBeClickable(buyNow)).click();
         return new LoginPage(this.getDriver());
     }

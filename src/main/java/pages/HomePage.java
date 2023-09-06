@@ -72,7 +72,8 @@ public class HomePage extends BasePage{
         /**
          * Clicks on the next page button to see more results
          */
-        scrollToBottomOfPage();
+//        scrollToBottomOfPage();
+        scrollToElement(nextPage);
         isElementIntercepted(nextPage);
     }
 

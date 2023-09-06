@@ -49,6 +49,11 @@ public class BasePage {
         }
     }
 
+    public void scrollToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
     public void scrollToBottomOfPage(){
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
