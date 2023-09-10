@@ -19,17 +19,17 @@ public class Steps {
     private ProductPage productPage;
     private LoginPage loginPage;
 
-    @Given("I access MercadoLibre webpage")
+    @Given("I access MercadoLibre website")
     public void accessMercadoLibreWebpage() {
         /**
-         * Access the MercadoLibre webpage
+         * Access the MercadoLibre website
          */
         WebDriver driver = DriverFactory.getDriver();
         homePage = new HomePage(driver);
         homePage.getUrl("https://www.mercadolibre.com/");
     }
 
-    @When("I click on the Uruguay flag")
+    @When("I click on the Uruguayan flag")
     public void accessUruguaySite() {
         /**
          * Clicks on the uruguayan flag to go to that website
@@ -37,7 +37,7 @@ public class Steps {
         homePage.accessUruguaySite();
     }
 
-    @Then("I can see the Uruguayan website displayed")
+    @Then("I can see the Uruguayan version of the website")
     public void isUruguayanSiteDisplayed() {
         /**
          * Verifies that the uruguayan MercadoLibre page is displayed
@@ -46,7 +46,7 @@ public class Steps {
         Assert.assertEquals(title, "Mercado Libre Uruguay - Envíos Gratis en el día", "The website is not displayed.");
     }
 
-    @When("I search for {string} on the search bar")
+    @When("I search for {string} in the search bar")
     public void searchOnSearchBar(String product) {
         /**
          * Searches for a product in the search bar
@@ -55,7 +55,7 @@ public class Steps {
         homePage.searchOnSearchBar(product);
     }
 
-    @When("I click on the next search results page")
+    @When("I navigate to the next search results page")
     public void clickNextResultsPage() {
         /**
          * Clicks on the next page button to see more results
@@ -63,7 +63,7 @@ public class Steps {
         homePage.clickNextResultsPage();
     }
 
-    @Then("I can see all results")
+    @Then("I can see all search results")
     public void getResults() {
         /**
          * Gets all the results for the product
@@ -72,15 +72,15 @@ public class Steps {
         Assert.assertFalse(results.isEmpty(), "There are no results");
     }
 
-    @When("I click on the second card")
-    public void clickSecondCard() {
+    @When("I click on the first product card")
+    public void clickFirstCard() {
         /**
-         * Clicks on the second card of the results list
+         * Clicks on the first card of the results list
          */
-        productPage = homePage.clickSecondCard(results);
+        productPage = homePage.clickFirstCard(results);
     }
 
-    @Then("I can verify the price is the same")
+    @Then("I can verify that the price remains unchanged")
     public void verifySamePrice() {
         /**
          * Verifies that the price stays consistent throughout the flow

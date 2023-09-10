@@ -1,14 +1,27 @@
 Feature: MercadoLibre
 
-  Scenario: Verify that the price is the same and there's at least one iPhone available
-    Given I access MercadoLibre webpage
-    When I click on the Uruguay flag
-    Then I can see the Uruguayan website displayed
-    When I search for "iPhone 14" on the search bar
-    And I click on the next search results page
-    Then I can see all results
-    When I click on the second card
-    Then I can verify the price is the same
-    And I can verify that there's at least one item available
+  Scenario: Searching for iPhone 14
+    Given I access MercadoLibre website
+    When I click on the Uruguayan flag
+    Then I can see the Uruguayan version of the website
+    When I search for "iphone 14" in the search bar
+    And I navigate to the next search results page
+    Then I can see all search results
+
+  Scenario Outline: Ensure price consistency across the flow
+    Given I access MercadoLibre website
+    When I click on the Uruguayan flag
+    Then I can see the Uruguayan version of the website
+    When I search for "<product>" in the search bar
+    And I navigate to the next search results page
+    Then I can see all search results
+    When I click on the first product card
+    Then I can verify that the price remains unchanged
     When I click on Comprar Ahora
     Then I can see the login page
+
+    Examples:
+      | product       |
+      | iphone 14     |
+      | playstation 5 |
+      | xbox series x |

@@ -18,7 +18,7 @@ public class HomePage extends BasePage{
     private WebElement nextPage;
     @FindBy(css = ".shops__item-title")
     private List<WebElement> results;
-    @FindBy(css = ".andes-money-amount__fraction")
+    @FindBy(css = ".ui-search-price__part:not(s) .andes-money-amount__fraction")
     private List<WebElement> prices;
     //========================================
 
@@ -84,14 +84,14 @@ public class HomePage extends BasePage{
         return getWait().until(ExpectedConditions.visibilityOfAllElements(results));
     }
 
-    public ProductPage clickSecondCard(List<WebElement> productsList){
+    public ProductPage clickFirstCard(List<WebElement> productsList){
         /**
-         * Clicks on the second card of the results list
+         * Clicks on the first card of the results list
          * param productsList: List<WebElement>
          * return: new ProductPage
          */
-        String phonePrice = getWait().until(ExpectedConditions.visibilityOfAllElements(prices)).get(1).getText();
-        getWait().until(ExpectedConditions.elementToBeClickable(productsList.get(1))).click();
+        String phonePrice = getWait().until(ExpectedConditions.visibilityOfAllElements(prices)).get(0).getText();
+        getWait().until(ExpectedConditions.elementToBeClickable(productsList.get(0))).click();
         return new ProductPage(this.getDriver(), phonePrice);
     }
 }

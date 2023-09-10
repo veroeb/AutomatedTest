@@ -11,7 +11,7 @@ public class ProductPage extends BasePage{
     @FindBy(css = ".ui-pdp-buybox__quantity__available")
     private WebElement quantity;
     @FindBy(css = "#price .ui-pdp-price__second-line .andes-money-amount__fraction")
-    private WebElement phonePrice;
+    private WebElement productPrice;
     @FindBy(css = ".ui-pdp-actions__container .ui-pdp-action--primary")
     private WebElement buyNow;
     //========================================
@@ -29,7 +29,7 @@ public class ProductPage extends BasePage{
         /**
          * Verifies that the price stays consistent throughout the flow
          */
-        String productPrice =  getWait().until(ExpectedConditions.visibilityOf(phonePrice)).getText();
+        String productPrice =  getWait().until(ExpectedConditions.visibilityOf(this.productPrice)).getText();
         int p = Integer.parseInt(productPrice.replaceAll("[^0-9]", ""));
         return p == Integer.parseInt(price.replaceAll("[^0-9]", ""));
     }
